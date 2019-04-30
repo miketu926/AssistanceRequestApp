@@ -19,7 +19,8 @@ class ServiceType extends Component {
   render() {
 
     return (
-      <select id="serviceType" value={this.props.selected} onChange={this.props.update("serviceType")}>
+      <select className="col" id="serviceType" value={this.props.selected} onChange={this.props.update("serviceType")}>
+        <option value="" disabled selected>Select Service Type</option>
         {this.state.serviceTypes.map(type => {
           return <option key={type.id} value={type.id}>
             {type.display_name}
