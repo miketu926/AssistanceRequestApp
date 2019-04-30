@@ -104,7 +104,7 @@ class Form extends Component {
 
           <div className="col mt-2 mb-4">
             <input className="col-1" type="checkbox" name="checkbox" id="checkbox" onClick={this.checked} />
-            <small className="col-11" for="checkbox">I hereby accept the terms of service for THE NETWORK and the Privacy Policy.</small>
+            <small className="col-11" htmlFor="checkbox">I hereby accept the terms of service for THE NETWORK and the Privacy Policy.</small>
           </div>
 
           <input className="col-4 offset-8" type="submit" value="Get Assistance" disabled={!isEnabled} />

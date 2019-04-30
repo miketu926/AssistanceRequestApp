@@ -20,7 +20,7 @@ class ServiceType extends Component {
 
     return (
       <select className="col" id="serviceType" value={this.props.selected} onChange={this.props.update("serviceType")}>
-        <option value="" disabled selected>Select Service Type</option>
+        <option value="" disabled>Select Service Type</option>
         {this.state.serviceTypes.map(type => {
           return <option key={type.id} value={type.id}>
             {type.display_name}
