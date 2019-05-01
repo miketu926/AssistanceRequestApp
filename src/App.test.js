@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { getServiceTypes, postAssistanceRequest } from './util/api';
-import { mount, configure } from 'enzyme';
+import { mount, configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import renderer from 'react-test-renderer';
 import Form from './component/form';
 
 configure({ adapter: new Adapter() });
@@ -70,13 +71,33 @@ describe('the API', () => {
 });
 
 describe('the Form', () => {
-  it('calls handleSubmit when the form is submitted', () => {
-    const onSubmitFn = jest.fn();
-    const wrapper = mount(<Form onSubmit={onSubmitFn} />);
+  const state = {
+    firstName: "Mike",
+    lastName: "Tu",
+    email: "miketu926@gmail.com",
+    serviceType: "Interview",
+    description: "Time to shine!",
+    checked: true,
+  };
 
-    const form = wrapper.find('form');
-    form.simulate('submit');
-    expect(onSubmitFn).toHaveBeenCalledTimes(1);
-
+  it('should match its empty snapshot', () => {
+    const tree = renderer.create(<Form />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
+
+  it('calls handleSubmit when the form is filled and submitted', () => {
+    const component = shallow(<Form />);
+    const preventDefault = jest.fn();
+
+    component.setState({
+      state
+    });
+
+    component.find('form').simulate('submit', { preventDefault });
+    expect(component).toMatchSnapshot();
+    expect(preventDefault).toBeCalled();
+  });
+
+
+
 });

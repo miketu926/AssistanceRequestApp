@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Form calls handleSubmit when the form is filled and submitted 1`] = `ShallowWrapper {}`;
+
+exports[`the Form calls handleSubmit when the form is submitted 1`] = `ShallowWrapper {}`;
+
+exports[`the Form should match its empty snapshot 1`] = `
+<form
+  className="col w-80"
+  onSubmit={[Function]}
+>
+  <h3
+    className="col mb-4 border-bottom pb-1"
+  >
+    New Assistance Request
+  </h3>
+  <input
+    className="col"
+    onChange={[Function]}
+    placeholder="First Name"
+    type="text"
+    value=""
+  />
+  <div
+    className="col text-danger text-right small mb-2"
+  >
+    required
+  </div>
+  <input
+    className="col"
+    onChange={[Function]}
+    placeholder="Last Name"
+    type="text"
+    value=""
+  />
+  <div
+    className="col text-danger text-right small mb-2"
+  >
+    required
+  </div>
+  <input
+    className="col"
+    onChange={[Function]}
+    placeholder="Email Address"
+    type="email"
+    value=""
+  />
+  <div
+    className="col text-danger text-right small mb-2"
+  >
+    required
+  </div>
+  <select
+    className="col"
+    id="serviceType"
+    onChange={[Function]}
+    value=""
+  >
+    <option
+      disabled={true}
+      value=""
+    >
+      Select Service Type
+    </option>
+  </select>
+  <div
+    className="col text-danger text-right small mb-2"
+  >
+    required
+  </div>
+  <textarea
+    className="col"
+    cols="60"
+    onChange={[Function]}
+    placeholder="Description"
+    rows="7"
+    value=""
+  />
+  <div
+    className="col mt-2 mb-4"
+  >
+    <input
+      className="col-1"
+      id="checkbox"
+      name="checkbox"
+      onClick={[Function]}
+      type="checkbox"
+    />
+    <small
+      className="col-11"
+      htmlFor="checkbox"
+    >
+      I hereby accept the terms of service for THE NETWORK and the Privacy Policy.
+    </small>
+  </div>
+  <input
+    className="col-4 offset-8"
+    disabled={true}
+    type="submit"
+    value="Get Assistance"
+  />
+</form>
+`;
