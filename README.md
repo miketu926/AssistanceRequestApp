@@ -1,6 +1,6 @@
 # A simple Assistance Request form with API response confirmations
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Bootstrap 4
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 ## Installation
   * Clone this repo
@@ -12,7 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Features
   * First Name, Last Name, Email, Service Type, Terms of Service validations
     * Submission is allowed when required fields are not blank and terms agreed/checked
-  * Populated service types dropdown through API request
+  * Populates dropdown of service types through API request
   * API response confirmations with user input details
 
 ## Technologies
