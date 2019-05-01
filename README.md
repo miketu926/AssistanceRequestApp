@@ -17,6 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Technologies
   * Create React App
+  * React Hook
   * Bootstrap 4
   * Docker & Docker-Machine
 

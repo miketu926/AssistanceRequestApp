@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { postAssistanceRequest } from '../util/api';
-import ServiceType from './service_type';
+import { ServiceType } from './service_type';
 import { SubmissionMessage } from './confirmation';
 
 class Form extends Component {
@@ -15,13 +15,11 @@ class Form extends Component {
     checked: false,
   };
 
-  update = (field) => {
-    return (e) => {
-      this.setState({ [field]: e.target.value });
-    };
-  }
+  update = field => e => {
+    this.setState({ [field]: e.target.value });
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     postAssistanceRequest(this.stateToJson(this.state))
       .then(res => res.json()).then(res => {
@@ -44,7 +42,7 @@ class Form extends Component {
     }
   });
 
-  handleModalClose = (e) => {
+  handleModalClose = e => {
     e.preventDefault();
     this.setState({
       firstName: "",
