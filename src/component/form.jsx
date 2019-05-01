@@ -4,58 +4,47 @@ import ServiceType from './service_type';
 import { SubmissionMessage } from './confirmation';
 
 class Form extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      serviceType: "",
-      description: "",
-      modalOpen: false,
-      modalMessage: "",
-      checked: false,
-    };
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    serviceType: "",
+    description: "",
+    modalOpen: false,
+    modalMessage: "",
+    checked: false,
+  };
 
-    this.update = this.update.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleModalClose = this.handleModalClose.bind(this);
-    this.checked = this.checked.bind(this);
-  }
-
-  update(field) {
+  update = (field) => {
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault();
     postAssistanceRequest(this.stateToJson(this.state))
       .then(res => res.json()).then(res => {
-        let message = res.message;
         this.setState({
-          modalMessage: message,
+          modalMessage: res.message,
           modalOpen: true,
         });
       });
   }
 
-  stateToJson(state) {
-    return {
-      assistance_request: {
-        contact: {
-          first_name: state.firstName,
-          last_name: state.lastName,
-          email: state.email,
-        },
-        service_type: state.serviceType,
-        description: state.description,
-      }
-    };
-  }
+  stateToJson = state => ({
+    assistance_request: {
+      contact: {
+        first_name: state.firstName,
+        last_name: state.lastName,
+        email: state.email,
+      },
+      service_type: state.serviceType,
+      description: state.description,
+    }
+  });
 
-  handleModalClose(e) {
+  handleModalClose = (e) => {
     e.preventDefault();
     this.setState({
       firstName: "",
@@ -68,7 +57,7 @@ class Form extends Component {
     });
   }
 
-  checked() {
+  checked = () => {
     this.state.checked ? this.setState({ checked: false }) : this.setState({ checked: true });
   }
 

@@ -1,14 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { getServiceTypes } from '../util/api';
 
 class ServiceType extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      serviceTypes: [],
-    };
-  }
+  state = { serviceTypes: [] };
 
   componentDidMount() {
     getServiceTypes().then(res => res.json()).then(res => {
