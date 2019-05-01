@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { postAssistanceRequest } from '../util/api';
 import ServiceType from './service_type';
-import { SubmissionMessage } from './submission_messages';
+import { SubmissionMessage } from './confirmation';
 
 class Form extends Component {
   constructor(props) {
