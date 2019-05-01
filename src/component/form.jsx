@@ -56,7 +56,7 @@ class Form extends Component {
   }
 
   checked = () => {
-    this.state.checked ? this.setState({ checked: false }) : this.setState({ checked: true });
+    this.setState({ checked: !this.state.checked });
   }
 
   render() {
