@@ -32,11 +32,8 @@ class Form extends Component {
   handleSubmit(e) {
     e.preventDefault();
     postAssistanceRequest(this.stateToJson(this.state))
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        let message = data.message;
+      .then(res => res.json()).then(res => {
+        let message = res.message;
         this.setState({
           modalMessage: message,
           modalOpen: true,
@@ -113,7 +110,7 @@ class Form extends Component {
       );
     } else {
       return (
-        <SubmissionMessage state={this.state} handleModalClose={this.handleModalClose} />
+        <SubmissionMessage {...this.state} handleModalClose={this.handleModalClose} />
       );
     }
 
